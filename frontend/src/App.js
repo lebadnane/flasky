@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const SpeakerProfile=(props)=>{
+  return(
+    <>
+    <h3>{props.name}</h3>
+    <p>Position: {props.jobTitle}</p>
+    <p>Company: {props.company}</p>
+    </>
+    );
 }
 
-export default App;
+
+function App() {
+  const speakerName='adnaned'
+  return (
+    <>
+    <h1>Speaker Profile</h1>
+    // Child component with attributes name,jobTitle and company inside parent component
+    <SpeakerProfile
+    name='Juliet Runolf'
+    jobTitle='Director,Marketing' 
+    company='Abernathy Group'/>
+    </>
+  );
+  }
+  export default App;
